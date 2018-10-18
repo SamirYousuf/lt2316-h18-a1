@@ -1,4 +1,3 @@
-# hi
 # Testing file for decision tree induction.
 # This file is intended to help you figure out what is expected
 # for you to pass the assignment. I don't recommend you change it, but
@@ -34,15 +33,17 @@ print(train_y[:10])
 # Train the model using the basic features of DecisionTree
 dt = DecisionTree()
 dt.train(X, y, cols[1:])
+#print(x)
 print("The model looks like:")
 print(dt)
 print("Testing it out.")
+
 dt.test(test_X, test_y, display=True)
 
 # Demonstrate saving and loading the model.
-with open("whatever.model", "w") as modelfile:
+with open("whatever.model", "wb") as modelfile:
     dt.save(modelfile)
-with open("whatever.model", "r") as modelfile:
+with open("whatever.model", "rb") as modelfile:
     dt2 = DecisionTree(load_from=modelfile)
     print(dt2)
 
